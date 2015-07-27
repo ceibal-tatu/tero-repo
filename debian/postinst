@@ -20,8 +20,8 @@ set -e
 
 case "$1" in
     configure)
-	if [ -x '/usr/share/doc/tero-repo-update/tero.gpg.key' ]; then
-		cat /usr/share/doc/tero-repo-update/tero.gpg.key | apt-key add -
+	if [ -f '/usr/share/doc/tero-repo/tero.gpg.key' ]; then
+		cat /usr/share/doc/tero-repo/tero.gpg.key | apt-key add -
 	else
 		wget http://taturepo.ddns.net/tero.gpg.key -O - | apt-key add -
 	fi
